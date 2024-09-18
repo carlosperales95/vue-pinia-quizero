@@ -13,7 +13,8 @@ export const useQuizStore = defineStore('quizStore', {
         async getQuizes() {
             this.quizes = [];
             this.isLoading = true;
-            const res = await fetch(`${import.meta.env.BACKEND_URL}/quizes`);
+            
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/quizes`);
             const data = await res.json();
             
             if (data) {
